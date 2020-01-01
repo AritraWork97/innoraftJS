@@ -19,17 +19,25 @@
       <div class="clearfix"></div>
       <div class="p3">
           <h1 id="Footer">Footer</h1>
-          <div id="dialog" title="Dialog Title">
-            <p>test</p>
-        </div>
       </div>
+    </div>
+    <div class="popup_alert">
+      <img class="topright" src="images/close.png">
+        <h1 class="text-decoration"> I am a popup</h1>
     </div>
   </body>
   <script>
+    $(document).ready(function () {
+          $(".popup_alert").hide();
+    });
    $(function() {
-          $(".p3").click(function () {
-                $("#dialog").dialog({modal: true, height: 590, width: 1005 });
+          $(".p3").click(() => {
+                $(".popup_alert").show();
+                $(".topright").show();
             });
+          $(".topright").click(() => {
+            $(".popup_alert").hide();
+          })
    })
   </script>
 </html>
